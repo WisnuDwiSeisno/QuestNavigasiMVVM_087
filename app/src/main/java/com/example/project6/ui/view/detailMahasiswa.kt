@@ -25,7 +25,9 @@ fun detailMahasiswa(uiSateMahasiswa: DataMahasiswa, onBackButton:()-> Unit, modi
         listDataMhs.forEach(){ item ->
             MainSection(judulParam = item.first, isipParam = item.second)}
 
-
+        Button(onClick = { onBackButton() }) {
+            Text(text = "Kembali")
+        }
     }
 }
 
