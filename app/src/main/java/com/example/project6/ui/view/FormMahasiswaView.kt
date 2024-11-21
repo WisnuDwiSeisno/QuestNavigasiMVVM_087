@@ -57,6 +57,15 @@ fun FormMahasiswaView(
                 .fillMaxWidth()
                 .padding(5.dp)
         )
+        OutlinedTextField(
+            value = nim,
+            onValueChange = {nim = it},
+            placeholder = { Text(text = "Masukan NIM")},
+            label = { Text(text = "NIM")},
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp)
+        )
 
 
         Row() {
