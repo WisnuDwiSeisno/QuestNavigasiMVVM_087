@@ -35,6 +35,7 @@ fun FormMahasiswaView(
 ) {
 //    Variabel untuk FieldText
     var nama by rememberSaveable { mutableStateOf("")}
+    var nim by rememberSaveable { mutableStateOf("")}
     var email by remember { mutableStateOf("")}
     var alamat by remember { mutableStateOf("")}
     var noHP by rememberSaveable { mutableStateOf("")}
@@ -56,6 +57,7 @@ fun FormMahasiswaView(
                 .fillMaxWidth()
                 .padding(5.dp)
         )
+
 
         Row() {
             listJK.forEach { item -> Row(verticalAlignment = Alignment.CenterVertically) {
