@@ -17,6 +17,7 @@ fun detailMahasiswa(uiSateMahasiswa: DataMahasiswa, onBackButton:()-> Unit, modi
 {
     val listDataMhs = listOf(
         Pair("Nama", uiSateMahasiswa.nama),
+        Pair("NIM", uiSateMahasiswa.nim),
         Pair("Gender", uiSateMahasiswa.gender),
         Pair("Alamat", uiSateMahasiswa.alamat),
         Pair("Email", uiSateMahasiswa.Email),
