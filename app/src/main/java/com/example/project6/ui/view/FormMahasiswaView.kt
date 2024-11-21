@@ -25,11 +25,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.project6.model.DataMahasiswa
 
 @Composable
 fun FormMahasiswaView(
     modifier: Modifier = Modifier,
-    listJK : List<String>,
+    listJK: List<String>,
     onSubmitClicked: (MutableList<String>) -> Unit
 ) {
 //    Variabel untuk FieldText

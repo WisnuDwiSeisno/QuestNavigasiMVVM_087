@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -12,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import com.example.project6.model.DataMahasiswa
 
 @Composable
-fun detailMahasiswa(uiSateMahasiswa: DataMahasiswa, modifier: Modifier = Modifier)
+fun detailMahasiswa(uiSateMahasiswa: DataMahasiswa, onBackButton:()-> Unit, modifier: Modifier = Modifier)
 {
     val listDataMhs = listOf(
         Pair("Nama", uiSateMahasiswa.nama),
@@ -23,6 +24,8 @@ fun detailMahasiswa(uiSateMahasiswa: DataMahasiswa, modifier: Modifier = Modifie
     Column {
         listDataMhs.forEach(){ item ->
             MainSection(judulParam = item.first, isipParam = item.second)}
+
+
     }
 }
 
