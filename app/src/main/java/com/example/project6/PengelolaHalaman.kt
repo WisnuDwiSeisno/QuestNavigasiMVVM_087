@@ -29,12 +29,16 @@ fun PengelolaHalaman(
         composable(route = Halaman.Formulir.name) {
             val konteks = LocalContext.current
             FormMahasiswaView(
+
+                //Dibawah ini merupakan dari parameter halaman Formulir View
                 listJK = DataKelamin.listJK.map { id ->
                     konteks.resources.getString(
                         id
                     )
                 },
-                onSubmitClicked = {}
+                onSubmitClicked = {
+
+                }
             )
         }
     }
