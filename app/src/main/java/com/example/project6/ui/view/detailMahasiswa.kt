@@ -19,6 +19,8 @@ fun detailMahasiswa(uiSateMahasiswa: DataMahasiswa, onBackButton:()-> Unit, modi
         Pair("Nama", uiSateMahasiswa.nama),
         Pair("Gender", uiSateMahasiswa.gender),
         Pair("Alamat", uiSateMahasiswa.alamat),
+        Pair("Email", uiSateMahasiswa.Email),
+        Pair("noHP", uiSateMahasiswa.noHP),
     )
 
     Column {
