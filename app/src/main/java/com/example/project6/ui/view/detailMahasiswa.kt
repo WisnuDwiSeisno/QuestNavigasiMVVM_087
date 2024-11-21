@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import com.example.project6.model.DataMahasiswa
 
 @Composable
-fun detailMahasiswa(modifier: Modifier = Modifier, uiSateMahasiswa: DataMahasiswa)
+fun detailMahasiswa(uiSateMahasiswa: DataMahasiswa, modifier: Modifier = Modifier)
 {
     val listDataMhs = listOf(
         Pair("Nama", uiSateMahasiswa.nama),

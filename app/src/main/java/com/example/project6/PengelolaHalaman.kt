@@ -8,10 +8,13 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.project6.ui.viewmodel.MahasiswaViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.example.project6.model.DataKelamin
 import com.example.project6.ui.view.FormMahasiswaView
 import androidx.navigation.compose.composable
+import com.example.project6.model.DataMahasiswa
+import com.example.project6.ui.view.detailMahasiswa
 
 enum class Halaman {
     Formulir,
@@ -20,12 +23,12 @@ enum class Halaman {
 
 @Composable
 fun PengelolaHalaman(
-    navController: NavController = rememberNavController(),
-    viewModel: MahasiswaViewModel = viewModel()
+    viewModel: MahasiswaViewModel = viewModel(),
+    navHost: NavHostController = rememberNavController()
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
-    NavHost(navController = navController, startDestination = Halaman.Formulir.name) {
+    NavHost(navController = navHost, startDestination = Halaman.Formulir.name) {
         composable(route = Halaman.Formulir.name) {
             val konteks = LocalContext.current
             FormMahasiswaView(
@@ -37,7 +40,16 @@ fun PengelolaHalaman(
                     )
                 },
                 onSubmitClicked = {
-
+                    viewModel.saveDataMahasiswa(it)
+                    navHost.navigate(Halaman.Detail.name)
+                }
+            )
+        }
+        composable(route = Halaman.Detail.name) {
+            detailMahasiswa(
+                uiSateMahasiswa = uiState,
+                onSubmitClicked = {
+                    navHost.popBackStack()
                 }
             )
         }
